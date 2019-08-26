@@ -8,9 +8,9 @@
 
 [ROS-Industrial](http://wiki.ros.org/Industrial) Universal Robot meta-package. See the [ROS wiki](http://wiki.ros.org/universal_robot) page for compatibility information and other more information.
 
-master frok from stable tag 1.2.5
+This master frok from stable tag 1.2.5
 
-__Installation__
+# Installation
 
 There are two different ways to install the packages in this repository. The following sections detail installing the packages using the binary distribution and building them from source in a Catkin workspace.
 
@@ -56,7 +56,7 @@ source $HOME/catkin_ws/devel/setup.bash
 ```
 
 
-__Usage__
+# Usage in real world
 
 ___With real Hardware___
 There are launch files available to bringup a real robot - either UR5 or UR10.  
@@ -95,6 +95,7 @@ As MoveIt! seems to have difficulties with finding plans for the UR with full jo
 
 ```roslaunch ur5_moveit_config moveit_rviz.launch config:=true```
 
+# Usage in simulation
 
 ___Usage with Gazebo Simulation___  
 There are launch files available to bringup a simulated robot - either UR5 or UR10.  
