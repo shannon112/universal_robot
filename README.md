@@ -6,6 +6,7 @@
 
 [ROS-Industrial](http://wiki.ros.org/Industrial) Universal Robot meta-package. See the [ROS wiki](http://wiki.ros.org/universal_robot) page for compatibility information and other more information.
 
+master frok from stable tag 1.2.5
 
 __Installation__
 
