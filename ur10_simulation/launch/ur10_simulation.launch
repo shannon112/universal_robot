@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- bringup in gazebo -->
+  <include file="$(find ur_gazebo)/launch/ur10.launch">
+    <arg name="limited" value="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+    <arg name="paused" value="false" doc="Starts gazebo in paused mode" />
+    <arg name="gui" value="true" doc="Starts gazebo gui" />
+  </include>
+
+  <!-- enable moveit control -->
+  <include file="$(find ur10_moveit_config)/launch/ur10_moveit_planning_execution.launch">
+    <arg name="sim" value="true" />
+    <arg name="limited" value="false"/>
+    <arg name="debug" value="false" />
+  </include>
+
+  <!--open moveit Rviz-->
+  <include file="$(find ur10_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="debug" value="false" />
+    <arg name="config" value="true" />
+  </include>
+</launch>
