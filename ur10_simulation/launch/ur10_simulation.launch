@@ -5,6 +5,7 @@
     <arg name="limited" value="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
     <arg name="paused" value="false" doc="Starts gazebo in paused mode" />
     <arg name="gui" value="true" doc="Starts gazebo gui" />
+    <arg name="world_name" value="$(find ur_gazebo)/worlds/ur10_world.world"/>
   </include>
 
   <!-- enable moveit control -->
