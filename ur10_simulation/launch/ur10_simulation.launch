@@ -2,16 +2,16 @@
 <launch>
   <!-- bringup in gazebo -->
   <include file="$(find ur_gazebo)/launch/ur10.launch">
-    <arg name="limited" value="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
-    <arg name="paused" value="false" doc="Starts gazebo in paused mode" />
+    <arg name="limited" value="true"  doc="If true, limits joint range [-PI, PI] on all joints." />
+    <arg name="paused" default="true" doc="Starts gazebo in paused mode, and spawn model in unpause" />
     <arg name="gui" value="true" doc="Starts gazebo gui" />
-    <arg name="world_name" value="$(find ur_gazebo)/worlds/ur10_world.world"/>
+    <arg name="world_name" value="$(find ur_gazebo)/worlds/ur10_complex_world.world"/>
   </include>
 
   <!-- enable moveit control -->
   <include file="$(find ur10_moveit_config)/launch/ur10_moveit_planning_execution.launch">
     <arg name="sim" value="true" />
-    <arg name="limited" value="false"/>
+    <arg name="limited" value="true"/>
     <arg name="debug" value="false" />
   </include>
 
@@ -20,4 +20,7 @@
     <arg name="debug" value="false" />
     <arg name="config" value="true" />
   </include>
+
+  <!-- Show in Rviz   -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur10_simulation)/rviz/ur10.rviz" />
 </launch>

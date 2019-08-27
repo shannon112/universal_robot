@@ -8,6 +8,8 @@
 
   <xacro:include filename="$(find ur_description)/urdf/ur.transmission.xacro" />
   <xacro:include filename="$(find ur_description)/urdf/ur.gazebo.xacro" />
+  <xacro:include filename="$(find ur_description)/urdf/sensors/hokuyo_utm30lx.urdf.xacro" />
+  <xacro:include filename="$(find ur_description)/urdf/sensors/_d435.urdf.xacro" />
 
   <xacro:macro name="cylinder_inertial" params="radius length mass *origin">
     <inertial>
@@ -300,6 +302,16 @@
         <origin rpy="0 0 0" xyz="-0.01 0 0"/>
       </collision>
     </link>
+
+    <!-- Hokuyo utm30lx-->
+    <xacro:hokuyo_utm30lx name="hokuyo" parent="${prefix}ee_link">
+      <origin xyz="0 0 0.07" rpy="0 0 0"/> <!--real measure from blue extend version-->
+    </xacro:hokuyo_utm30lx>
+
+    <!-- Intel realsense-->
+    <xacro:sensor_d435 parent="${prefix}ee_link">
+      <origin xyz="0.015 0 0" rpy="0 0 0"/> <!--real measure from blue extend version-->
+    </xacro:sensor_d435>
 
     <xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />
     <xacro:ur_arm_gazebo prefix="${prefix}" />

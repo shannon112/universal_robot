@@ -12,8 +12,7 @@
 
   <!-- arm -->
   <xacro:ur10_robot prefix="" joint_limited="false"
-    transmission_hw_interface="$(arg transmission_hw_interface)"
-  />
+    transmission_hw_interface="$(arg transmission_hw_interface)"/>
 
   <link name="world" />
 
