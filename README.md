@@ -119,6 +119,10 @@ For starting up RViz with a configuration including the MoveIt! Motion Planning 
 
 ```roslaunch ur10_moveit_config moveit_rviz.launch config:=true```
 
+For integration in one file
+```
+roslaunch ur10_simulation ur10_simulation.launch
+```
 
 NOTE:  
 As MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi], there is a joint_limited version using joint limits restricted to [-pi,pi]. In order to use this joint limited version, simply use the launch file arguments 'limited', i.e.:  
