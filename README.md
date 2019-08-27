@@ -1,6 +1,6 @@
 # My Universal Robot
 
-<img src="https://github.com/shannon112/universal_robot_10/blob/master/ur_gazebo/img/ur10.png" width="400"/>
+<img src="https://github.com/shannon112/universal_robot_10/blob/master/ur_gazebo/img/ur10.png" height="230"/> <img src="https://github.com/shannon112/universal_robot_10/blob/master/ur10_simulation/img/moveit_perceptron.png" height="230"/>
 
 [![Build Status](http://build.ros.org/job/Kdev__universal_robot__ubuntu_xenial_amd64/badge/icon)](http://build.ros.org/job/Kdev__universal_robot__ubuntu_xenial_amd64)
 
