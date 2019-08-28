@@ -23,4 +23,8 @@
 
   <!-- Show in Rviz   -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur10_simulation)/rviz/ur10.rviz" />
+
+  <!-- Gui arm (Optional)-->
+  <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>
+
 </launch>
