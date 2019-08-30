@@ -105,7 +105,9 @@ Don't forget to source the correct setup shell files and use a new terminal for 
 
 To bring up the simulated robot in Gazebo, run:
 
-```roslaunch ur_gazebo ur10.launch```
+```
+roslaunch ur_gazebo ur10.launch
+```
 
 
 ___MoveIt! with a simulated robot___  
@@ -113,11 +115,15 @@ Again, you can use MoveIt! to control the simulated robot.
 
 For setting up the MoveIt! nodes to allow motion planning run:
 
-```roslaunch ur10_moveit_config ur10_moveit_planning_execution.launch sim:=true```
+```
+roslaunch ur10_moveit_config ur10_moveit_planning_execution.launch sim:=true
+```
 
 For starting up RViz with a configuration including the MoveIt! Motion Planning plugin run:
 
-```roslaunch ur10_moveit_config moveit_rviz.launch config:=true```
+```
+roslaunch ur10_moveit_config moveit_rviz.launch config:=true
+```
 
 For integration in one file
 ```
