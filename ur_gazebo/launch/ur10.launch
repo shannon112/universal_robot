@@ -28,9 +28,22 @@
     -J wrist_3_joint 0
     -unpause" respawn="false" output="screen" />
 
-  <!-- spawning arm/joint controllers and puiblishing robot state -->
-  <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
+  <!-- Robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="" />
+  </node>
+
+  <!-- spawn/load joint controllers -->
+  <rosparam file="$(find ur_gazebo)/controller/joint_state_controller.yaml" command="load"/>
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+
+  <!-- spawn/load arm controllers -->
   <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur10.yaml" command="load"/>
   <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
+
+  <!-- Fake Calibration -->
+  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
+        args="pub /calibrated std_msgs/Bool true" />
 
 </launch>
