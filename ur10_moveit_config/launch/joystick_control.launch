@@ -1,7 +1,7 @@
 <launch>
   <!-- See moveit_ros/visualization/doc/joystick.rst for documentation -->
 
-  <arg name="dev" default="/dev/input/ps3joy" />
+  <arg name="dev" default="/dev/input/by-id/usb-Logitech_Logitech_Dual_Action_CBAA4221-joystick" />
 
   <!-- Launch joy node -->
   <node pkg="joy" type="joy_node" name="joy">
